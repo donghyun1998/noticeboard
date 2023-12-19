@@ -18,7 +18,7 @@ export default async function Edit(props) {
         <input
           style={{ display: "none" }}
           name="_id"
-          value={result._id} // 이거 왜 defaultvalue로 하면 안들어가냐?
+          value={result._id.toString()} // 이거 왜 defaultvalue로 하면 안들어가냐?
         />
         <button type="submit">전송</button>
       </form>
