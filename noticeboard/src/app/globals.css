@@ -1,3 +1,20 @@
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 10px;
@@ -32,4 +49,4 @@ button {
   background: lightgray;
   border: none;
   border-radius: 5px;
-} 
+}

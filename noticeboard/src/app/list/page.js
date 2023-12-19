@@ -10,11 +10,12 @@ export default async function List() {
 		{
 			result.map((a, i) => {
 				return (
-					<div className="list-item">
+					<div className="list-item" key={i}>
 					<Link href={"/detail/" + result[i]._id}>
 						<h4>{result[i].title}</h4>
 					</Link>
-					<DetailLink/>
+					{/* <DetailLink/> */}
+					<Link href={'/edit/' + result[i]._id}>🖌️</Link>
 					<p>1월 1일</p>
 				  </div>
 				)

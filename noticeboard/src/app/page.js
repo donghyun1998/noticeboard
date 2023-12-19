@@ -10,6 +10,6 @@ export default async function Home() {
   let a = await db.collection('post').find().toArray();
   // console.log(a);
   return (
-    <div>안녕</div>
+    <div>홈 화면</div>
   )
 }

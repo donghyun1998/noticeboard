@@ -5,6 +5,7 @@ export default async function Detail(props) {
 	let db = (await connectDB).db("noticedb");
 	let result = await db.collection("post").findOne({_id: new
 		ObjectId(props.params.id)})
+	
 	// console.log(props)
 	return (
 		<div>
