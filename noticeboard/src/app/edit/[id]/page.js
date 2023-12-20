@@ -2,15 +2,12 @@ import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 
 export default async function Edit(props) {
-  // console.log(props);
   let db = (await connectDB).db("noticedb");
 
   let result = await db
     .collection("post")
     .findOne({ _id: new ObjectId(props.params.id) });
-    console.log(props.params.id);
-  // console.log(result._id.toString());
-  
+
   return (
     <div className="p-20">
       <h4>수정페이지</h4>

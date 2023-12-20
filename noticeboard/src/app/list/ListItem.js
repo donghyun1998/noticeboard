@@ -1,22 +1,27 @@
+"use client";
 import Link from "next/link";
 
-export default async function ListItem({result}) {
+export default function ListItem({ result }) {
+  // console.log(result);
   return (
     <div>
-      {result.map((a, i) => {
+      {result.map((value, index) => {
         return (
-          <div className="list-item" key={i}>
-            <Link href={"/detail/" + a._id}>
-              <h4>{a.title}</h4>
+          <div className="list-item" key={index}>
+            <Link href={"/detail/" + value._id}>
+              <h4>{value.title}</h4>
             </Link>
-            <Link href={"/edit/" + a._id}>🔧</Link>
-			{/* <span onClick={()=>{
-				fetch('/api/post/delete', {
-					method : 'DELETE',
-				}).then(()=>{
-					console.log('삭제ajax');
-				})
-			}}>🚽</span> */}
+            <Link href={"/edit/" + value._id}>🔧</Link>
+            <span
+              onClick={() => {
+                fetch("/api/post/delete", {
+                  method: "DELETE",
+                  body: value._id,
+                })
+              }}
+            >
+              🚽
+            </span>
             <p>1월 1일</p>
           </div>
         );
