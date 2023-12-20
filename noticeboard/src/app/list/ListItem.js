@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 export default function ListItem({ result }) {
-  // console.log(result);
   return (
     <div>
       {result.map((value, index) => {
