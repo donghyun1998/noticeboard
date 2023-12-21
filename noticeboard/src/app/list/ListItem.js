@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import Link from "next/link";
 
 export default function ListItem({ result }) {
@@ -12,11 +13,23 @@ export default function ListItem({ result }) {
             </Link>
             <Link href={"/edit/" + value._id}>🔧</Link>
             <span
-              onClick={() => {
-                fetch("/api/post/delete", {
-                  method: "DELETE",
-                  body: value._id,
-                })
+              onClick={(e) => {
+                axios
+                  .delete("/api/post/delete", {
+                    data: { id: value._id },
+                  })
+                  .then((response) => {
+                    if (response.status === 200) {
+                      console.log(200);
+                      e.target.parentElement.style.opacity = 0;
+                      setTimeout(() => {
+                        e.target.parentElement.style.display = "none";
+                      }, 1000);
+                    }
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
               }}
             >
               🚽

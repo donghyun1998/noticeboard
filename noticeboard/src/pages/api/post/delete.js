@@ -8,8 +8,8 @@ export default async function handler(request, response) {
 	let result = await db.collection("post").deleteOne({_id : new ObjectId(request.body)});
 	console.log(result);
 	if (result.deletedCount === 0)
-		response.status(500);
+		response.status(500).end();
 	else
-		response.status(200);
+		response.status(200).end();
   }
 }
