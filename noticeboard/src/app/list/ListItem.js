@@ -15,9 +15,7 @@ export default function ListItem({ result }) {
             <span
               onClick={(e) => {
                 axios
-                  .delete("/api/post/delete", {
-                    data: { id: value._id },
-                  })
+                  .delete("/api/post/delete?id=" + value._id,)
                   .then((response) => {
                     if (response.status === 200) {
                       console.log(200);
